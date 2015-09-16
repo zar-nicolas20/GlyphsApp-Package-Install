@@ -1,14 +1,24 @@
 #! /usr/bin/env bash
+# Cleaning directories
 echo Initiating Glyphs Scripts setup
-sudo rm /private/etc/cron.d/sync_git_repos
-sudo mkdir /etc/cron.d
+if [ -e "$/private/etc/cron.d/sync_git_repos" ] ; then
+	sudo rm /private/etc/cron.d/sync_git_repos
+fi
+if [! -e "$/etc/cron.d" ] ; then
+	sudo mkdir /etc/cron.d
+fi
 cd /etc/cron.d
-rm /tmp/GlyphsScriptsConfi
+if [ -e "$/tmp/GlyphsScriptsConfi" ] ; then
+	rm /tmp/GlyphsScriptsConfi
+fi
 mkdir /tmp/GlyphsScriptsConfi
 cd ~/Documents
-rm GlyphsScripts
+if [ -e "$GlyphsScripts/" ] ; then
+	rm GlyphsScripts/
+fi
 mkdir GlyphsScripts
 cd GlyphsScripts
+# Cloning Repositories
 echo 'Cloning Repositories'
 git clone https://github.com/BelaFrank/StringSmash.git BelaFrank_StringSmash
 cd BelaFrank_StringSmash
@@ -344,6 +354,22 @@ ln -s ~/Documents/GlyphsScripts/Tosche_ShowBlackFill/ShowBlackFill.glyphsReporte
 cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done Tosche Show Black Fill Plugin'
+echo '==================================='
+git clone https://github.com/Tosche/BubbleKern.git Tosche_BubbleKern
+cd Tosche_BubbleKern
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/ShowKernBubbles.glyphsReporter ShowKernBubbles.glyphsReporter
+rm ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern
+mkdir ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern
+cd ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern/
+ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/BubbleKern.py BubbleKern.py
+ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/Delete\ Bubble\ Layers.py Delete\ Bubble\ Layers.py
+ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/Make\ Bubble\ Layers.py Make\ Bubble\ Layers.py
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done Tosche BubbleKern'
 echo '==================================='
 sudo ditto /tmp/GlyphsScriptsConfi/sync_git_repos /private/etc/cron.d/sync_git_repos
 echo Finished Glyphs Scripts setup
