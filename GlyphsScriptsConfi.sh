@@ -335,6 +335,16 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done schriftgestalt word-o-mat Plugin'
 echo '==================================='
+git clone https://github.com/schriftgestalt/DrawBotGlyphsPlugin.git schriftgestalt_DrawBotGlyphsPlugin
+cd schriftgestalt_DrawBotGlyphsPlugin
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/schriftgestalt_DrawBotGlyphsPlugin/DrawBot.glyphsPlugin DrawBot.glyphsPlugin
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done schriftgestalt DrawBotGlyphs Plugin'
+echo '==================================='
 git clone https://github.com/Tosche/Glyphs-Scripts.git Tosche_Glyphs-Scripts
 cd Tosche_Glyphs-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
