@@ -87,6 +87,9 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../schriftgestalt_word-o-mat/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../schriftgestalt_DrawBotGlyphsPlugin/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../Tosche_BubbleKern/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
