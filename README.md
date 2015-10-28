@@ -1,9 +1,9 @@
 # GlyphsApp-Package-Install
-Bash shell to install most of the Scripts and Plugins of Glyphs App
+This is a Bash shell file to install most of the Scripts and Plugins for GlyphsApp.
 
-This shell batch create a clone of most of the repositories of Glyphs's Plugins and scripts host in GitHub.
+This Bash shell creates a clone of most of the repositories of Glyphs's Plugins and scripts hosted in GitHub.
 
-Additionaly this scritp create a **sync_git_repos** in `/private/etc/cron.d/` that keep up-to-date the local repositories, doing `fetch` each 5 minutes.
+Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` that keep up-to-date the local repositories, doing `fetch` each 5 minutes.
 
 # Install Notes:
 1. Download `GlyphsScriptsConfi.sh` from this repository
@@ -12,16 +12,40 @@ Additionaly this scritp create a **sync_git_repos** in `/private/etc/cron.d/` th
    ```
    cd ~/Downloads/
    ```
-4. Run the `GlyphsScriptsConfi.sh` calling the sh enviroment. eg. Type in the terminal window:
+4. Run the `GlyphsScriptsConfi.sh` calling the `sh` enviroment. e.g. Type in the terminal window:
    ```
    sh GlyphsScriptsConfi.sh
    ```
-5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
-6. Forget to keep updating the repositories, but if you want to be able to update them, so run `GlyphsScripts_updater.sh` as it was mentioned with other shell scripts, type in the terminal:  
+5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write:  
+   ```
+   /private/etc/cron.d/sync_git_repos
+   ```
+6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run
+   ```
+   GlyphsScripts_updater.sh
+   ```
+in the same way that it was mentioned with other shell scripts, type in the terminal:  
    ```
    sh GlyphsScripts_updater.sh
    ```
 And you will have updated all repositories.
+
+# Uninstall Notes:
+1. You should deleted the symbolic links that were created at 
+  ```
+  ~/Library/Application\ Support/Glyphs/Scripts/ 
+  ```
+and then deleted the GlyphsScripts directory created at 
+  ```
+  ~/Documents/GlyphsScripts/
+  ```
+that is almost all.
+
+2. If you want to deleted what was written in `/etc/cron.d` you only need to type in terminal 
+```
+sudo rm /private/etc/cron.d/sync_git_repos
+```
+and put your user password. This step is automatic when you try to install again.
 
 ###Repertoire of Plugins and Scripts:
 
@@ -50,6 +74,8 @@ And you will have updated all repositories.
   * [mekkablue Show Interpolations Plugin](https://github.com/mekkablue/ShowInterpolations)
   * [mekkablue Show Metrics Keys Plugin](https://github.com/mekkablue/ShowMetricsKeys)
   * [mekkablue Show Offset Curve Parameter Preview Plugin](https://github.com/mekkablue/ShowOffsetCurveParameterPreview)
+  * [Mekkablue's Symmetry Plugin](https://github.com/mekkablue/Symmetry)
+  * [Mekkablue's ShowExportStatus Plugin](https://github.com/mekkablue/ShowExportStatus)
 * [schriftgestalt Autopsy Plugin](https://github.com/schriftgestalt/Autopsy-Plugin)
   * [schriftgestalt  Expand Paths Preview Tool Plugin](https://github.com/schriftgestalt/Glyphs-Plugins)
   * [schriftgestalt Scripts](https://github.com/schriftgestalt/Glyphs-Scripts)
@@ -57,6 +83,11 @@ And you will have updated all repositories.
 *  [Tosche BubbleKern]( https://github.com/Tosche/BubbleKern)
   * [Tosche Scripts](https://github.com/Tosche/Glyphs-Scripts)
   * [Tosche Show Black Fill Plugin](https://github.com/Tosche/ShowBlackFill)
+* [Simon Cozens's Script](https://github.com/simoncozens/GlyphsScripts)
+  * [Simon Cozens's GlyphGit Plugin](https://github.com/simoncozens/GlyphsGit)
+  * [Simon Cozens's ShowPathArea Plugin](https://github.com/simoncozens/GlyphsPlugins)
+* [Huerta Tipografica's Scripts](https://github.com/huertatipografica/huertatipografica-scripts)
+* [Wei Huang's Scripts](https://github.com/weiweihuanghuang/wei-glyphs-scripts)
 
 If you feel that I have missed one repository, please write a issue in this repo.
 Best,
