@@ -422,6 +422,16 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done SimonCozens GlyphsGit Plugin'
 echo '==================================='
+git clone https://github.com/simoncozens/GlyphsPlugins.git SimonCozens_ShowPathArea
+cd SimonCozens_ShowPathArea
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/SimonCozens_ShowPathArea/ShowPathArea.glyphsReporter ShowPathArea.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done SimonCozens ShowPathArea Plugin'
+echo '==================================='
 git clone https://github.com/simoncozens/GlyphsScripts.git SimonCozens_Scripts
 cd SimonCozens_Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
