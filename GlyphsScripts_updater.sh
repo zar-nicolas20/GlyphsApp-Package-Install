@@ -9,6 +9,9 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../DeutschMark_Glyphsapp-Scripts/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../HuertaTipografica_Scripts/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../jenskutilek_Curve-Equalizer/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
@@ -57,6 +60,9 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../mekkablue_ShowCrosshair/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../mekkablue_ShowExportStatus/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../mekkablue_ShowFilledPreview/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
@@ -75,7 +81,13 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../mekkablue_ShowOffsetCurveParameterPreview/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../mekkablue_Symmetry/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../schriftgestalt_Autopsy-Plugin/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../schriftgestalt_DrawBotGlyphsPlugin/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../schriftgestalt_Glyphs-Plugins/
@@ -87,7 +99,13 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../schriftgestalt_word-o-mat/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
-cd ../schriftgestalt_DrawBotGlyphsPlugin/
+cd ../SimonCozens_GlyphsGit/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../SimonCozens_Scripts/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../SimonCozens_ShowPathArea/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../Tosche_BubbleKern/
@@ -97,6 +115,9 @@ cd ../Tosche_Glyphs-Scripts/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../Tosche_ShowBlackFill/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../wei_scripts/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 echo "Sync all repositories"
