@@ -31,15 +31,7 @@ in the same way that it was mentioned with other shell scripts, type in the term
 And you will have updated all repositories.
 
 # Uninstall Notes:
-1. You should deleted the symbolic links that were created at 
-  ```
-  ~/Library/Application\ Support/Glyphs/Scripts/ 
-  ```
-and then deleted the GlyphsScripts directory created at 
-  ```
-  ~/Documents/GlyphsScripts/
-  ```
-that is almost all.
+1. You should deleted the symbolic links that were created at `~/Library/Application\ Support/Glyphs/Scripts/ ` and then deleted the GlyphsScripts directory created at `~/Documents/GlyphsScripts/`. That is almost all.
 
 2. If you want to deleted what was written in `/etc/cron.d` you only need to type in terminal 
 ```
