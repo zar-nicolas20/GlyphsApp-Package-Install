@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 # Cleaning directories
 echo Initiating Glyphs Scripts setup
-if [ -e "$/private/etc/cron.d/sync_git_repos" ] ; then
+if [ -f "$/private/etc/cron.d/sync_git_repos" ] ; then
 	sudo rm /private/etc/cron.d/sync_git_repos
 fi
-if [! -e "$/etc/cron.d" ] ; then
+if [ ! -f "$/etc/cron.d" ] ; then
 	sudo mkdir /etc/cron.d
 fi
 cd /etc/cron.d
@@ -13,10 +13,21 @@ if [ -e "$/tmp/GlyphsScriptsConfi" ] ; then
 fi
 mkdir /tmp/GlyphsScriptsConfi
 cd ~/Documents
-if [ -e "$GlyphsScripts/" ] ; then
+if [ -d "$GlyphsScripts" ] ; then
 	rm GlyphsScripts/
 fi
 mkdir GlyphsScripts
+# Making Scripts folder if there isn't
+cd ~/Library/Application\ Support/Glyphs/
+if [ ! -d "$Scripts" ] ; then
+	mkdir Scripts
+fi
+# Making Plugin folder if there isn't
+cd ~/Library/Application\ Support/Glyphs/
+if [ ! -d "$Plugins" ] ; then
+	mkdir Plugins
+fi
+cd ~/Documents
 cd GlyphsScripts
 # Cloning Repositories
 echo 'Cloning Repositories'
@@ -279,6 +290,26 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done mekkablue Show Offset Curve Parameter Preview Plugin'
 echo '==================================='
+git clone https://github.com/mekkablue/Symmetry.git mekkablue_Symmetry
+cd mekkablue_Symmetry
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_Symmetry/Symmetry.glyphsReporter Symmetry.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done mekkablue Symmetry Plugin'
+echo '==================================='
+git clone https://github.com/mekkablue/ShowExportStatus.git mekkablue_ShowExportStatus
+cd mekkablue_ShowExportStatus
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_ShowExportStatus/ShowExportStatus.glyphsReporter ShowExportStatus.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done mekkablue ShowExportStatus Plugin'
+echo '==================================='
 git clone https://github.com/schriftgestalt/Autopsy-Plugin.git schriftgestalt_Autopsy-Plugin
 cd schriftgestalt_Autopsy-Plugin
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -380,6 +411,46 @@ ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/Make\ Bubble\ Layers.py Make\ 
 cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done Tosche BubbleKern'
+echo '==================================='
+git clone https://github.com/simoncozens/GlyphsGit.git SimonCozens_GlyphsGit
+cd SimonCozens_GlyphsGit
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/SimonCozens_GlyphsGit/GlyphsGit.glyphsPlugin GlyphsGit.glyphsPlugin
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done SimonCozens GlyphsGit Plugin'
+echo '==================================='
+git clone https://github.com/simoncozens/GlyphsScripts.git SimonCozens_Scripts
+cd SimonCozens_Scripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/SimonCozens_Scripts/ SimonCozens
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo "Done SimonCozens's Scripts"
+echo '==================================='
+git clone https://github.com/huertatipografica/huertatipografica-scripts.git HuertaTipografica_Scripts
+cd HuertaTipografica_Scripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/HuertaTipografica_Scripts/ HuertaTipografica
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo "Done Huerta Tipografica's Scripts"
+echo '==================================='
+git clone https://github.com/weiweihuanghuang/wei-glyphs-scripts.git wei_scripts
+cd wei_scripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/wei_scripts/ Wei
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo "Done Wei Huang's Scripts"
 echo '==================================='
 sudo ditto /tmp/GlyphsScriptsConfi/sync_git_repos /private/etc/cron.d/sync_git_repos
 echo Finished Glyphs Scripts setup
