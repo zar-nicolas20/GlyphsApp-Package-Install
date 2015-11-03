@@ -180,6 +180,17 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done mekkablue MakeCorner Plugin'
 echo '==================================='
+git https://github.com/mekkablue/NotePalettes.git mekkablue_NotePalettes
+cd mekkablue_NotePalettes
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_NotePalettes/FontNote.glyphsPalette FontNote.glyphsPalette
+ln -s ~/Documents/GlyphsScripts/mekkablue_NotePalettes/GlyphNote.glyphsPalette GlyphNote.glyphsPalette
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo 'Done mekkablue Note Palettes Plugin'
+echo '==================================='
 git clone https://github.com/mekkablue/Noodler.git mekkablue_Noodler
 cd mekkablue_Noodler
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
