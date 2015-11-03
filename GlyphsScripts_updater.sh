@@ -45,6 +45,9 @@ printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../mekkablue_MakeCorner/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+cd ../mekkablue_NotePalettes/
+git pull
+printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 cd ../mekkablue_Noodler/
 git pull
 printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
