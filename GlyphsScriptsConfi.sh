@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 # Cleaning directories
-echo Initiating Glyphs Scripts setup
+echo "Initiating Glyphs Scripts setup"
 if [ -f "/private/etc/cron.d/sync_git_repos" ] ; then
 	sudo rm /private/etc/cron.d/sync_git_repos
 fi
@@ -123,6 +123,117 @@ if [ -d "Scripts" ] ; then
 	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
+if [ -d "Plugins" ] ; then
+	cd Plugins/
+	if [ -h "Autopsy.glyphsPlugin" ] ; then
+		unlink "Autopsy.glyphsPlugin"
+	fi
+	if [ -h "BroadNibber.glyphsFilter" ] ; then
+		unlink "BroadNibber.glyphsFilter"
+	fi
+	if [ -h "CurveEQ.glyphsFilter" ] ; then
+		unlink "CurveEQ.glyphsFilter"
+	fi
+	if [ -h "CutAndShake.glyphsFilter" ] ; then
+		unlink "CutAndShake.glyphsFilter"
+	fi
+	if [ -h "DrawBot.glyphsPlugin" ] ; then
+		unlink "DrawBot.glyphsPlugin"
+	fi
+	if [ -h "FixZeroHandles.glyphsFilter" ] ; then
+		unlink "FixZeroHandles.glyphsFilter"
+	fi
+	if [ -h "FontNote.glyphsPalette" ] ; then
+		unlink "FontNote.glyphsPalette"
+	fi
+	if [ -h "GlyphNote.glyphsPalette" ] ; then
+		unlink "GlyphNote.glyphsPalette"
+	fi
+	if [ -h "GlyphsExpandPathsPreviewTool.glyphsReporter" ] ; then
+		unlink "GlyphsExpandPathsPreviewTool.glyphsReporter"
+	fi
+	if [ -h "GlyphsGit.glyphsPlugin" ] ; then
+		unlink "GlyphsGit.glyphsPlugin"
+	fi
+	if [ -h "GlyphsInLabelColor.glyphsReporter" ] ; then
+		unlink "GlyphsInLabelColor.glyphsReporter"
+	fi
+	if [ -h "InsertInflections.glyphsFilter" ] ; then
+		unlink "InsertInflections.glyphsFilter"
+	fi
+	if [ -h "Inverter.glyphsFilter" ] ; then
+		unlink "Inverter.glyphsFilter"
+	fi
+	if [ -h "LayerGeek.glyphsFilter" ] ; then
+		unlink "LayerGeek.glyphsFilter"
+	fi
+	if [ -h "MakeCorner.glyphsFilter" ] ; then
+		unlink "MakeCorner.glyphsFilter"
+	fi
+	if [ -h "Noodler.glyphsFilter" ] ; then
+		unlink "Noodler.glyphsFilter"
+	fi
+	if [ -h "OffsetPreview.glyphsReporter" ] ; then
+		unlink "OffsetPreview.glyphsReporter"
+	fi
+	if [ -h "RedArrow.glyphsReporter" ] ; then
+		unlink "RedArrow.glyphsReporter"
+	fi
+	if [ -h "ShowAngledHandles.glyphsReporter" ] ; then
+		unlink "ShowAngledHandles.glyphsReporter"
+	fi
+	if [ -h "ShowBlackFill.glyphsReporter" ] ; then
+		unlink "ShowBlackFill.glyphsReporter"
+	fi
+	if [ -h "ShowComponentOrder.glyphsReporter" ] ; then
+		unlink "ShowComponentOrder.glyphsReporter"
+	fi
+	if [ -h "ShowCoordinatesOfSelectedNodes.glyphsReporter" ] ; then
+		unlink "ShowCoordinatesOfSelectedNodes.glyphsReporter"
+	fi
+	if [ -h "ShowCrosshair.glyphsReporter" ] ; then
+		unlink "ShowCrosshair.glyphsReporter"
+	fi
+	if [ -h "ShowExportStatus.glyphsReporter" ] ; then
+		unlink "ShowExportStatus.glyphsReporter"
+	fi
+	if [ -h "ShowFilledPreview.glyphsReporter" ] ; then
+		unlink "ShowFilledPreview.glyphsReporter"
+	fi
+	if [ -h "ShowHandlesEverywhere.glyphsReporter" ] ; then
+		unlink "ShowHandlesEverywhere.glyphsReporter"
+	fi
+	if [ -h "ShowInterpolation.glyphsReporter" ] ; then
+		unlink "ShowInterpolation.glyphsReporter"
+	fi
+	if [ -h "ShowKernBubbles.glyphsReporter" ] ; then
+		unlink "ShowKernBubbles.glyphsReporter"
+	fi
+	if [ -h "ShowKerningGroupReference.glyphsReporter" ] ; then
+		unlink "ShowKerningGroupReference.glyphsReporter"
+	fi
+	if [ -h "ShowMetricsKeys.glyphsReporter" ] ; then
+		unlink "ShowMetricsKeys.glyphsReporter"
+	fi
+	if [ -h "ShowNodeCount.glyphsReporter" ] ; then
+		unlink "ShowNodeCount.glyphsReporter"
+	fi
+	if [ -h "ShowPathArea.glyphsReporter" ] ; then
+		unlink "ShowPathArea.glyphsReporter"
+	fi
+	if [ -h "ShowRotated.glyphsReporter" ] ; then
+		unlink "ShowRotated.glyphsReporter"
+	fi
+	if [ -h "ShowSiblings.glyphsReporter" ] ; then
+		unlink "ShowSiblings.glyphsReporter"
+	fi
+	if [ -h "Symmetry.glyphsReporter" ] ; then
+		unlink "Symmetry.glyphsReporter"
+	fi
+	if [ -h "word-o-mat.glyphsPlugin" ] ; then
+		unlink "word-o-mat.glyphsPlugin"
+	fi
+fi
 if [ ! -d "$Scripts" ] ; then
 	mkdir Scripts
 fi
