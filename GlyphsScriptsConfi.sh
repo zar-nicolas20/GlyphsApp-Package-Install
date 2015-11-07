@@ -234,6 +234,7 @@ if [ -d "Plugins" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
 	fi
 fi
+cd ~/Library/Application\ Support/Glyphs/
 if [ ! -d "$Scripts" ] ; then
 	mkdir Scripts
 fi
