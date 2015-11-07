@@ -1,20 +1,20 @@
 #! /usr/bin/env bash
 # Cleaning directories
 echo Initiating Glyphs Scripts setup
-if [ -f "$/private/etc/cron.d/sync_git_repos" ] ; then
+if [ -f "/private/etc/cron.d/sync_git_repos" ] ; then
 	sudo rm /private/etc/cron.d/sync_git_repos
 fi
 if [ ! -f "$/etc/cron.d" ] ; then
 	sudo mkdir /etc/cron.d
 fi
 cd /etc/cron.d
-if [ -e "$/tmp/GlyphsScriptsConfi" ] ; then
-	rm /tmp/GlyphsScriptsConfi
+if [ -e "/tmp/GlyphsScriptsConfi" ] ; then
+	rm -r /tmp/GlyphsScriptsConfi
 fi
 mkdir /tmp/GlyphsScriptsConfi
 cd ~/Documents
-if [ -d "$GlyphsScripts" ] ; then
-	rm GlyphsScripts/
+if [ -d "GlyphsScripts" ] ; then
+	rm -rf GlyphsScripts
 fi
 mkdir GlyphsScripts
 # Making Scripts folder if there isn't
@@ -58,7 +58,9 @@ git clone https://github.com/DeutschMark/Glyphsapp-Scripts.git DeutschMark_Glyph
 cd DeutschMark_Glyphsapp-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
-rm ~/Library/Application\ Support/Glyphs/Scripts/Deutshcmark
+if [ -e "~/Library/Application Support/Glyphs/Scripts/Deutshcmark" ] ; then
+	rm -r ~/Library/Application\ Support/Glyphs/Scripts/Deutshcmark
+fi
 mkdir ~/Library/Application\ Support/Glyphs/Scripts/Deutshcmark
 cd ~/Library/Application\ Support/Glyphs/Scripts/Deutshcmark/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Scripts/Accents/ Accents
@@ -180,7 +182,7 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done mekkablue MakeCorner Plugin'
 echo '==================================='
-git https://github.com/mekkablue/NotePalettes.git mekkablue_NotePalettes
+git clone https://github.com/mekkablue/NotePalettes.git mekkablue_NotePalettes
 cd mekkablue_NotePalettes
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
@@ -345,7 +347,9 @@ git clone https://github.com/schriftgestalt/Glyphs-Scripts.git schriftgestalt_Gl
 cd schriftgestalt_Glyphs-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
-rm ~/Library/Application\ Support/Glyphs/Scripts/schriftgestalt
+if [ -e "~/Library/Application Support/Glyphs/Scripts/schriftgestalt" ] ; then
+	rm -r ~/Library/Application\ Support/Glyphs/Scripts/schriftgestalt
+fi
 mkdir ~/Library/Application\ Support/Glyphs/Scripts/schriftgestalt
 cd ~/Library/Application\ Support/Glyphs/Scripts/schriftgestalt/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_Glyphs-Scripts/Autopsy.py Autopsy.py
@@ -413,7 +417,9 @@ printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLIC
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/ShowKernBubbles.glyphsReporter ShowKernBubbles.glyphsReporter
-rm ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern
+if [ -e "~/Library/Application Support/Glyphs/Scripts/BubbleKern" ] ; then
+	rm -r ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern
+fi
 mkdir ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern
 cd ~/Library/Application\ Support/Glyphs/Scripts/BubbleKern/
 ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/BubbleKern.py BubbleKern.py
