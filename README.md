@@ -30,6 +30,9 @@ in the same way that it was mentioned with other shell scripts, type in the term
    ```
 And you will have updated all repositories.
 
+# Renstall Notes:
+Follow install notes.
+
 # Uninstall Notes:
 1. ~~You should deleted the symbolic links that were created at `~/Library/Application\ Support/Glyphs/Scripts/ ` and then deleted the GlyphsScripts directory created at `~/Documents/GlyphsScripts/`. That is almost all~~.
 
