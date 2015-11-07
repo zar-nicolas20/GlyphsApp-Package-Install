@@ -17,7 +17,111 @@ if [ -d "GlyphsScripts" ] ; then
 	rm -rf GlyphsScripts
 fi
 mkdir GlyphsScripts
-# Making Scripts folder if there isn't
+# Unlinking symbolic links
+cd ~/Library/Application\ Support/FontLab/Studio\ 5/Macros/
+if [ -h "Glyphs Export.py" ] ; then
+	unlink "Glyphs Export.py"
+fi 
+if [ -h "Glyphs Import.py" ] ; then
+	unlink "Glyphs Import.py" 
+fi
+cd ~/Library/Application\ Support/Glyphs/
+if [ -d "Scripts" ] ; then
+	cd Scripts/
+	if [ -h "BubbleKern/BubbleKern.py" ] ; then
+		unlink "BubbleKern/BubbleKern.py"
+	fi
+	if [ -h "BubbleKern/Delete Bubble Layers.py" ] ; then
+		unlink "BubbleKern/Delete Bubble Layers.py"
+	fi
+	if [ -h "BubbleKern/Make Bubble Layers.py" ] ; then
+		unlink "BubbleKern/Make Bubble Layers.py"
+	fi
+	if [ -d "BubbleKern" ] ; then
+		rm -r "BubbleKern"
+	fi
+	if [ -h "Deutshcmark/Accents" ] ; then
+		unlink "Deutshcmark/Accents"
+	fi
+	if [ -h "Deutshcmark/Font" ] ; then
+		unlink "Deutshcmark/Font"
+	fi
+	if [ -h "Deutshcmark/Glyphs" ] ; then
+		unlink "Deutshcmark/Glyphs"
+	fi
+	if [ -h "Deutshcmark/Metrics" ] ; then
+		unlink "Deutshcmark/Metrics"
+	fi
+	if [ -h "Deutshcmark/Sketching" ] ; then
+		unlink "Deutshcmark/Sketching"
+	fi
+	if [ -d "Deutshcmark" ] ; then
+		rm -r "Deutshcmark"
+	fi
+	if [ -h "GSPen.py" ] ; then
+		unlink "GSPen.py"
+	fi
+	if [ -f "GSPen.pyc" ] ; then
+		rm "GSPen.pyc"
+	fi
+	if [ -h "HuertaTipografica" ] ; then
+		unlink "HuertaTipografica"
+	fi
+	if [ -h "justanotherfoundry" ] ; then
+		unlink "justanotherfoundry"
+	fi
+	if [ -h "mekkablue" ] ; then
+		unlink "mekkablue"
+	fi
+	if [ -h "objectsGS.py" ] ; then
+		unlink "objectsGS.py"
+	fi
+	if [ -f "objectsGS.pyc" ] ; then
+		rm "objectsGS.pyc"
+	fi
+	if [ -h "schriftgestalt/Autopsy.py" ] ; then
+		unlink "schriftgestalt/Autopsy.py"
+	fi
+	if [ -h "schriftgestalt/Delete Images.py" ] ; then
+		unlink "schriftgestalt/Delete Images.py"
+	fi
+	if [ -h "schriftgestalt/Helper" ] ; then
+		unlink "schriftgestalt/Helper"
+	fi
+	if [ -h "schriftgestalt/Import SVG.py" ] ; then
+		unlink "schriftgestalt/Import SVG.py"
+	fi
+	if [ -h "schriftgestalt/Import SVGs2Glyphs.py" ] ; then
+		unlink "schriftgestalt/Import SVGs2Glyphs.py"
+	fi
+	if [ -h "schriftgestalt/Make Unicase Font.py" ] ; then
+		unlink "schriftgestalt/Make Unicase Font.py"
+	fi
+	if [ -h "schriftgestalt/MakeProdunctionFont.py" ] ; then
+		unlink "schriftgestalt/MakeProdunctionFont.py"
+	fi
+	if [ -h "schriftgestalt/Metrics & Classes" ] ; then
+		unlink "schriftgestalt/Metrics & Classes"
+	fi
+	if [ -h "schriftgestalt/Other Scripts" ] ; then
+		unlink "schriftgestalt/Other Scripts"
+	fi
+	if [ -d "schriftgestalt" ] ; then
+		rm -r "schriftgestalt"
+	fi
+	if [ -h "SimonCozens" ] ; then
+		unlink "SimonCozens"
+	fi
+	if [ -h "StringSmash" ] ; then
+		unlink "StringSmash"
+	fi
+	if [ -h "Tosche" ] ; then
+		unlink "Tosche"
+	fi
+	if [ -h "Wei" ] ; then
+		unlink "Wei"
+	fi
+fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ ! -d "$Scripts" ] ; then
 	mkdir Scripts
