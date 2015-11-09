@@ -30,7 +30,7 @@ in the same way that it was mentioned with other shell scripts, type in the term
    ```
 And you will have updated all repositories.
 
-# Renstall Notes:
+# Reinstall Notes:
 Follow install notes.
 
 # Uninstall Notes:
