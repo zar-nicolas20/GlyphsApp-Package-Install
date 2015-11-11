@@ -158,6 +158,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "Inverter.glyphsFilter" ] ; then
 		unlink "Inverter.glyphsFilter"
 	fi
+	if [ -h "LabelColor.glyphsReporter" ] ; then
+		unlink "LabelColor.glyphsReporter"
+	fi
 	if [ -h "LayerGeek.glyphsFilter" ] ; then
 		unlink "LayerGeek.glyphsFilter"
 	fi
@@ -188,6 +191,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowCrosshair.glyphsReporter" ] ; then
 		unlink "ShowCrosshair.glyphsReporter"
 	fi
+	if [ -h "ShowDistanceAndAngleOfNodes.glyphsReporter" ] ; then
+		unlink "ShowDistanceAndAngleOfNodes.glyphsReporter"
+	fi
 	if [ -h "ShowExportStatus.glyphsReporter" ] ; then
 		unlink "ShowExportStatus.glyphsReporter"
 	fi
@@ -209,6 +215,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowMetricsKeys.glyphsReporter" ] ; then
 		unlink "ShowMetricsKeys.glyphsReporter"
 	fi
+	if [ -h "ShowNextMaster.glyphsReporter" ] ; then
+		unlink "ShowNextMaster.glyphsReporter"
+	fi
 	if [ -h "ShowNodeCount.glyphsReporter" ] ; then
 		unlink "ShowNodeCount.glyphsReporter"
 	fi
@@ -221,8 +230,14 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowSiblings.glyphsReporter" ] ; then
 		unlink "ShowSiblings.glyphsReporter"
 	fi
+	if [ -h "SmartPlumblines.glyphsReporter" ] ; then
+		unlink "SmartPlumblines.glyphsReporter"
+	fi
 	if [ -h "Symmetry.glyphsReporter" ] ; then
 		unlink "Symmetry.glyphsReporter"
+	fi
+	if [ -h "uncoverXHeight.glyphsReporter" ] ; then
+		unlink "uncoverXHeight.glyphsReporter"
 	fi
 	if [ -h "word-o-mat.glyphsPlugin" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
