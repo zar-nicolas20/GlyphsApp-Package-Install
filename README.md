@@ -20,7 +20,7 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
    sh GlyphsScriptsConfi.sh
    ```  
 
-5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
+5. At the begining of the installation, you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
 6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run:  
 
    ```
@@ -36,7 +36,13 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
    And you will have updated all repositories.
 
 # Reinstall Notes:
-Follow install notes.
+1. Run the `GlyphsScriptsConfi.sh` calling the `sh` enviroment. e.g. Type in the terminal window:  
+
+   ```
+   sh GlyphsScriptsConfi.sh
+   ```  
+
+2. At the begining of the reinstallation, you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
 
 # Uninstall Notes:
 You only need to run `GlyphsScriptsUnistall.sh`, put your user password to deleted those file written in special folders.
