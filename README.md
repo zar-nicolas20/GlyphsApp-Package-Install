@@ -9,36 +9,32 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
 1. Download `GlyphsScriptsConfi.sh` from this repository
 2. Open Terminal:
 3. Go to the same folder where have been downloaded `GlyphsScriptsConfi.sh`. e.g. If  `GlyphsScriptsConfi.sh` was downloaded in the **Downloads** folder, then type in the terminal:  
-   ```
-   cd ~/Downloads/
-   ```
+```
+cd ~/Downloads/
+```
 4. Run the `GlyphsScriptsConfi.sh` calling the `sh` enviroment. e.g. Type in the terminal window:
-   ```
-   sh GlyphsScriptsConfi.sh
-   ```
+```
+sh GlyphsScriptsConfi.sh
+```
 5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write:  
-   ```
-   /private/etc/cron.d/sync_git_repos
-   ```
+```
+/private/etc/cron.d/sync_git_repos
+```
 6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run
-   ```
-   GlyphsScripts_updater.sh
-   ```
+```
+GlyphsScripts_updater.sh
+```
 in the same way that it was mentioned with other shell scripts, type in the terminal:  
-   ```
-   sh GlyphsScripts_updater.sh
-   ```
+```
+sh GlyphsScripts_updater.sh
+```
 And you will have updated all repositories.
 
 # Reinstall Notes:
 Follow install notes.
 
 # Uninstall Notes:
-1. ~~You should deleted the symbolic links that were created at `~/Library/Application\ Support/Glyphs/Scripts/ ` and then deleted the GlyphsScripts directory created at `~/Documents/GlyphsScripts/`. That is almost all~~.
-
-2. ~~If you want to deleted what was written in `/etc/cron.d` you only need to type in terminal~~
-
-Now you can only run `GlyphsScriptsUnistall.sh`, put your user password.
+You only need to run `GlyphsScriptsUnistall.sh`, put your user password to deleted those file written in special folders.
    ```
    sh GlyphsScriptsUnistall.sh
    ```
@@ -46,7 +42,15 @@ Now you can only run `GlyphsScriptsUnistall.sh`, put your user password.
 ###Repertoire of Plugins and Scripts:
 
 * [BelaFrank String Smash Scripts](https://github.com/BelaFrank/StringSmash)
-* [DeutschMark Glyphsapp Plugins](https://github.com/DeutschMark/Glyphsapp-Plugins)
+* [DeutschMark Show Smart Plumblines Plugin](https://github.com/DeutschMark/Show-Smart-Plumblines)
+  * [DeutschMark Uncover xHeight Plugin](https://github.com/DeutschMark/Uncover-xHeight)
+  * [DeutschMark Show Siblings Plugin](https://github.com/DeutschMark/Show-Siblings)
+  * [DeutschMark Show Distance And Angle Of Nodes Plugin](https://github.com/DeutschMark/Show-Distance-And-Angle-Of-Nodes)
+  * [DeutschMark Show Next Master Plugin](https://github.com/DeutschMark/Show-Next-Master)
+  * [DeutschMark Show Kerning Group Reference Plugin](https://github.com/DeutschMark/Show-Kerning-Group-Reference)
+  * [DeutschMark Show Rotated Plugin](https://github.com/DeutschMark/Show-Rotated)
+  * [DeutschMark Show Label Color Plugin](https://github.com/DeutschMark/Show-Label-Color)
+  * [DeutschMark Show Node Count Plugin](https://github.com/DeutschMark/Show-Node-Count)
   * [DeutschMark Glyphsapp Scripts](https://github.com/DeutschMark/Glyphsapp-Scripts)
 * [jenskutilek Curve-Equalizer Plugin](https://github.com/jenskutilek/Curve-Equalizer)
   * [jenskutilek RedArrow-Glyphs Plugin](https://github.com/jenskutilek/RedArrow-Glyphs)
