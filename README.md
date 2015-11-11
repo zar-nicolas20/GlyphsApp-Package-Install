@@ -21,13 +21,7 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
    ```  
 
 5. At the begining of the installation, you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
-6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run:  
-
-   ```
-   GlyphsScripts_updater.sh
-   ```
-
-   in the same way that it was mentioned with other shell scripts, type in the terminal:  
+6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run `GlyphsScripts_updater.sh` in the same way that it was mentioned with other shell scripts, type in the terminal:  
    
    ```
    sh GlyphsScripts_updater.sh
