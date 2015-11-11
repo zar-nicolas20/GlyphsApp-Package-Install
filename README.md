@@ -9,26 +9,31 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
 1. Download `GlyphsScriptsConfi.sh` from this repository
 2. Open Terminal:
 3. Go to the same folder where have been downloaded `GlyphsScriptsConfi.sh`. e.g. If  `GlyphsScriptsConfi.sh` was downloaded in the **Downloads** folder, then type in the terminal:  
-```
-cd ~/Downloads/
-```
-4. Run the `GlyphsScriptsConfi.sh` calling the `sh` enviroment. e.g. Type in the terminal window:
-```
-sh GlyphsScriptsConfi.sh
-```
-5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write:  
-```
-/private/etc/cron.d/sync_git_repos
-```
-6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run
-```
-GlyphsScripts_updater.sh
-```
-in the same way that it was mentioned with other shell scripts, type in the terminal:  
-```
-sh GlyphsScripts_updater.sh
-```
-And you will have updated all repositories.
+
+   ```
+   cd ~/Downloads/
+   ```  
+
+4. Run the `GlyphsScriptsConfi.sh` calling the `sh` enviroment. e.g. Type in the terminal window:  
+
+   ```
+   sh GlyphsScriptsConfi.sh
+   ```  
+
+5. At the begining of the installation you will be asked for the user password. Type the password in order to have privilegies to write '/private/etc/cron.d/sync_git_repos`
+6. Forget of keeping updating the repositories, but if you want to be able to update them, so you only need to run:  
+
+   ```
+   GlyphsScripts_updater.sh
+   ```
+
+   in the same way that it was mentioned with other shell scripts, type in the terminal:  
+   
+   ```
+   sh GlyphsScripts_updater.sh
+   ```  
+
+   And you will have updated all repositories.
 
 # Reinstall Notes:
 Follow install notes.
