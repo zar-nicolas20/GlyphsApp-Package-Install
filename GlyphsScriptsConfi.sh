@@ -164,6 +164,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "Inverter.glyphsFilter" ] ; then
 		unlink "Inverter.glyphsFilter"
 	fi
+	if [ -h "LabelColor.glyphsReporter" ] ; then
+		unlink "LabelColor.glyphsReporter"
+	fi
 	if [ -h "LayerGeek.glyphsFilter" ] ; then
 		unlink "LayerGeek.glyphsFilter"
 	fi
@@ -194,6 +197,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowCrosshair.glyphsReporter" ] ; then
 		unlink "ShowCrosshair.glyphsReporter"
 	fi
+	if [ -h "ShowDistanceAndAngleOfNodes.glyphsReporter" ] ; then
+		unlink "ShowDistanceAndAngleOfNodes.glyphsReporter"
+	fi
 	if [ -h "ShowExportStatus.glyphsReporter" ] ; then
 		unlink "ShowExportStatus.glyphsReporter"
 	fi
@@ -215,6 +221,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowMetricsKeys.glyphsReporter" ] ; then
 		unlink "ShowMetricsKeys.glyphsReporter"
 	fi
+	if [ -h "ShowNextMaster.glyphsReporter" ] ; then
+		unlink "ShowNextMaster.glyphsReporter"
+	fi
 	if [ -h "ShowNodeCount.glyphsReporter" ] ; then
 		unlink "ShowNodeCount.glyphsReporter"
 	fi
@@ -227,8 +236,14 @@ if [ -d "Plugins" ] ; then
 	if [ -h "ShowSiblings.glyphsReporter" ] ; then
 		unlink "ShowSiblings.glyphsReporter"
 	fi
+	if [ -h "SmartPlumblines.glyphsReporter" ] ; then
+		unlink "SmartPlumblines.glyphsReporter"
+	fi
 	if [ -h "Symmetry.glyphsReporter" ] ; then
 		unlink "Symmetry.glyphsReporter"
+	fi
+	if [ -h "uncoverXHeight.glyphsReporter" ] ; then
+		unlink "uncoverXHeight.glyphsReporter"
 	fi
 	if [ -h "word-o-mat.glyphsPlugin" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
@@ -257,19 +272,96 @@ cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo 'Done BelaFrank String Smash Scripts'
 echo '==================================='
-git clone https://github.com/DeutschMark/Glyphsapp-Plugins.git DeutschMark_Glyphsapp-Plugins
-cd DeutschMark_Glyphsapp-Plugins
+git clone https://github.com/DeutschMark/Show-Smart-Plumblines.git DeutschMark_Show-Smart-Plumblines
+cd DeutschMark_Show-Smart-Plumblines
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
 cd ~/Library/Application\ Support/Glyphs/Plugins/
-ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Plugins/ShowKerningGroupReference/ShowKerningGroupReference.glyphsReporter ShowKerningGroupReference.glyphsReporter
-ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Plugins/ShowNodeCount/ShowNodeCount.glyphsReporter ShowNodeCount.glyphsReporter
-ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Plugins/ShowRotated/ShowRotated.glyphsReporter ShowRotated.glyphsReporter
-ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Plugins/ShowSiblings/ShowSiblings.glyphsReporter ShowSiblings.glyphsReporter
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Smart-Plumblines/SmartPlumblines.glyphsReporter SmartPlumblines.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
-echo 'Done DeutschMark Glyphsapp Plugins'
-echo '==================================='
+echo '======================================'
+echo 'Done DeutschMark Show Smart Plumblines'
+echo '======================================'
+git clone https://github.com/DeutschMark/Uncover-xHeight.git DeutschMark_Uncover-xHeight
+cd DeutschMark_Uncover-xHeight
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Uncover-xHeight/uncoverXHeight.glyphsReporter uncoverXHeight.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Uncover xHeight'
+echo '======================================'
+git clone https://github.com/DeutschMark/Show-Siblings.git DeutschMark_Show-Siblings
+cd DeutschMark_Show-Siblings
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Siblings/ShowSiblings.glyphsReporter ShowSiblings.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Show Siblings'
+echo '======================================'
+git clone https://github.com/DeutschMark/Show-Distance-And-Angle-Of-Nodes.git DeutschMark_Show-Distance-And-Angle-Of-Nodes
+cd DeutschMark_Show-Distance-And-Angle-Of-Nodes
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Distance-And-Angle-Of-Nodes/ShowDistanceAndAngleOfNodes.glyphsReporter ShowDistanceAndAngleOfNodes.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '================================================='
+echo 'Done DeutschMark Show Distance And Angle Of Nodes'
+echo '================================================='
+git clone https://github.com/DeutschMark/Show-Next-Master.git DeutschMark_Show-Next-Master
+cd DeutschMark_Show-Next-Master
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Next-Master/ShowNextMaster.glyphsReporter ShowNextMaster.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Show Next Master'
+echo '======================================'
+git clone https://github.com/DeutschMark/Show-Kerning-Group-Reference.git DeutschMark_Show-Kerning-Group-Reference
+cd DeutschMark_Show-Kerning-Group-Reference
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Kerning-Group-Reference/ShowKerningGroupReference.glyphsReporter ShowKerningGroupReference.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '============================================='
+echo 'Done DeutschMark Show Kerning Group Reference'
+echo '============================================='
+git clone https://github.com/DeutschMark/Show-Rotated.git DeutschMark_Show-Rotated
+cd DeutschMark_Show-Rotated
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Rotated/ShowRotated.glyphsReporter ShowRotated.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Show Rotated'
+echo '======================================'
+git clone https://github.com/DeutschMark/Show-Label-Color.git DeutschMark_Show-Label-Color
+cd DeutschMark_Show-Label-Color
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Label-Color/LabelColor.glyphsReporter LabelColor.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Show Label Color'
+echo '======================================'
+git clone https://github.com/DeutschMark/Show-Node-Count.git DeutschMark_Show-Node-Count
+cd DeutschMark_Show-Node-Count
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Node-Count/ShowNodeCount.glyphsReporter ShowNodeCount.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done DeutschMark Show Node Count'
+echo '======================================'
 git clone https://github.com/DeutschMark/Glyphsapp-Scripts.git DeutschMark_Glyphsapp-Scripts
 cd DeutschMark_Glyphsapp-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
