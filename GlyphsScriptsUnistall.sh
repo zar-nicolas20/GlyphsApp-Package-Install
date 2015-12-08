@@ -115,6 +115,9 @@ if [ -d "Scripts" ] ; then
 	if [ -h "Wei" ] ; then
 		unlink "Wei"
 	fi
+	if [ -h "Nevu" ] ; then
+		unlink "Nevu"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ -d "Plugins" ] ; then
