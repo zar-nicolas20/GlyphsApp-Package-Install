@@ -82,6 +82,7 @@ You only need to run `GlyphsScriptsUnistall.sh`, put your user password to delet
   * [mekkablue Show Offset Curve Parameter Preview Plugin](https://github.com/mekkablue/ShowOffsetCurveParameterPreview)
   * [mekkablue Symmetry Plugin](https://github.com/mekkablue/Symmetry)
   * [mekkablue ShowExportStatus Plugin](https://github.com/mekkablue/ShowExportStatus)
+* [Nevu Scripts](https://github.com/schriftgestalt/Glyphs-Scripts)
 * [schriftgestalt Autopsy Plugin](https://github.com/schriftgestalt/Autopsy-Plugin)
   * [schriftgestalt  Expand Paths Preview Tool Plugin](https://github.com/schriftgestalt/Glyphs-Plugins)
   * [schriftgestalt Scripts](https://github.com/schriftgestalt/Glyphs-Scripts)
