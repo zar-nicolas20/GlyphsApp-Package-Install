@@ -111,6 +111,9 @@ if [ -d ~/Documents/GlyphsScripts ] ; then
 	cd ~/Documents/GlyphsScripts/mekkablue_Symmetry/
 	git pull
 	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/Nevu_Scripts/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 	cd ~/Documents/GlyphsScripts/schriftgestalt_Autopsy-Plugin/
 	git pull
 	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
