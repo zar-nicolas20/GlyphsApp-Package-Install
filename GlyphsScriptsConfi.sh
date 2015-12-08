@@ -121,6 +121,9 @@ if [ -d "Scripts" ] ; then
 	if [ -h "Wei" ] ; then
 		unlink "Wei"
 	fi
+	if [ -h "Nevu" ] ; then
+		unlink "Nevu"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ -d "Plugins" ] ; then
@@ -786,6 +789,16 @@ ln -s ~/Documents/GlyphsScripts/wei_scripts/ Wei
 cd ~/Documents/GlyphsScripts/
 echo '==================================='
 echo "Done Wei Huang's Scripts"
+echo '==================================='
+git clone https://github.com/Nevu/IconFont.git Nevu_Scripts
+cd Nevu_Scripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/Nevu_Scripts/ Nevu
+cd ~/Documents/GlyphsScripts/
+echo '==================================='
+echo "Done Nevu's Scripts"
 echo '==================================='
 sudo ditto /tmp/GlyphsScriptsConfi/sync_git_repos /private/etc/cron.d/sync_git_repos
 echo Finished Glyphs Scripts setup
