@@ -39,9 +39,9 @@ Additionaly, this script creates a **sync_git_repos** in `/private/etc/cron.d/` 
 2. At the begining of the reinstallation, you will be asked for the user password. Type the password in order to have privilegies to write `/private/etc/cron.d/sync_git_repos`
 
 # Uninstall Notes:
-You only need to run `GlyphsScriptsUnistall.sh`, put your user password to deleted those file written in special folders.
+You only need to run `GlyphsScriptsUninstall.sh`, put your user password to deleted those file written in special folders.
    ```
-   sh GlyphsScriptsUnistall.sh
+   sh GlyphsScriptsUninstall.sh
    ```
 
 ###Repertoire of Plugins and Scripts:

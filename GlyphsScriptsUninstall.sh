@@ -246,4 +246,4 @@ if [ -d "Plugins" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
 	fi
 fi
-echo "Unistallation complete"
+echo "Uninstallation complete"
