@@ -171,6 +171,9 @@ if [ -d ~/Documents/GlyphsScripts ] ; then
 	cd ~/Documents/GlyphsScripts/mekkablue_ShowTopsAndBottoms/
 	git pull
 	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/Nevu_Plugins/Show-Global-Glyph
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
 	##############################
 	###    Testing releases    ###
 
