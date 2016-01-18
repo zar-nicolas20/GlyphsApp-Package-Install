@@ -100,7 +100,6 @@ You only need to run `GlyphsScriptsUninstall.sh`, put your user password to dele
 * [Simon Cozens's Script](https://github.com/simoncozens/GlyphsScripts)
   * [Simon Cozens's GlyphGit Plugin](https://github.com/simoncozens/GlyphsGit)
   * [Simon Cozens's ShowPathArea Plugin](https://github.com/simoncozens/GlyphsPlugins)
-[//]: #  * ([Simon Cozens's Callipers Plugin](https://github.com/simoncozens/Callipers))
 * [Huerta Tipografica's Scripts](https://github.com/huertatipografica/huertatipografica-scripts)
 * [Wei Huang's Scripts](https://github.com/weiweihuanghuang/wei-glyphs-scripts)
 
