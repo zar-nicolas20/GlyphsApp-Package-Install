@@ -150,6 +150,41 @@ if [ -d ~/Documents/GlyphsScripts ] ; then
 	cd ~/Documents/GlyphsScripts/wei_scripts/
 	git pull
 	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/GuidoFerreyra_Scripts/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/GuidoFerreyra_ShowNextFont/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/GuidoFerreyra_ShowNextFontAnchors/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/GuidoFerreyra_showAnchorCoordinates/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/GuidoFerreyra_showCoordinates/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/mekkablue_ShowItalic/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	cd ~/Documents/GlyphsScripts/mekkablue_ShowTopsAndBottoms/
+	git pull
+	printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	##############################
+	###    Testing releases    ###
+
+	# cd ~/Documents/GlyphsScripts/SimonCozens_Callipers/
+	# previousTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+	# git pull
+	# latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+	# if [ "$previousTag" -ne "$latestTag" ] ; then
+	#	curl https://github.com/simoncozens/Callipers/releases/download/$latestTag/Callipers-$latestTag.zip
+	#	unzip Callipers-$latestTag.zip ./
+	# printf '\n\n\t#### Pulled %s\n\n' "${PWD##*/}"
+	
+	###    Testing releases    ###
+	##############################
 	echo ""
 	echo "###############################"
 	echo "# All repositories up-to-date #"

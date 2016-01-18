@@ -118,6 +118,9 @@ if [ -d "Scripts" ] ; then
 	if [ -h "Nevu" ] ; then
 		unlink "Nevu"
 	fi
+	if [ -h "GuidoFerreyra" ] ; then
+		unlink "GuidoFerreyra"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ -d "Plugins" ] ; then
@@ -244,6 +247,21 @@ if [ -d "Plugins" ] ; then
 	fi
 	if [ -h "word-o-mat.glyphsPlugin" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
+	fi
+	if [ -h "showNextFont.glyphsReporter" ] ; then
+		unlink "showNextFont.glyphsReporter"
+	fi
+	if [ -h "showNextFontAnchors.glyphsReporter" ] ; then
+		unlink "showNextFontAnchors.glyphsReporter"
+	fi
+	if [ -h "showCoordinates.glyphsReporter" ] ; then
+		unlink "showCoordinates.glyphsReporter"
+	fi
+	if [ -h "showItalic.glyphsReporter" ] ; then
+		unlink "showItalic.glyphsReporter"
+	fi
+	if [ -h "ShowTopsAndBottoms.glyphsReporter" ] ; then
+	unlink "ShowTopsAndBottoms.glyphsReporter"
 	fi
 fi
 echo "Uninstallation complete"

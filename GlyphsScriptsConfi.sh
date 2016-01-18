@@ -17,7 +17,7 @@ if [ -d "GlyphsScripts" ] ; then
 	rm -rf GlyphsScripts
 fi
 mkdir GlyphsScripts
-# Unlinking symbolic links
+# Unlinking symbolic links, even the legacy ones
 cd ~/Library/Application\ Support/FontLab/Studio\ 5/Macros/
 if [ -h "Glyphs Export.py" ] ; then
 	unlink "Glyphs Export.py"
@@ -123,6 +123,9 @@ if [ -d "Scripts" ] ; then
 	fi
 	if [ -h "Nevu" ] ; then
 		unlink "Nevu"
+	fi
+	if [ -h "GuidoFerreyra" ] ; then
+		unlink "GuidoFerreyra"
 	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
@@ -251,6 +254,21 @@ if [ -d "Plugins" ] ; then
 	if [ -h "word-o-mat.glyphsPlugin" ] ; then
 		unlink "word-o-mat.glyphsPlugin"
 	fi
+	if [ -h "showNextFont.glyphsReporter" ] ; then
+		unlink "showNextFont.glyphsReporter"
+	fi
+	if [ -h "showNextFontAnchors.glyphsReporter" ] ; then
+		unlink "showNextFontAnchors.glyphsReporter"
+	fi
+	if [ -h "showCoordinates.glyphsReporter" ] ; then
+		unlink "showCoordinates.glyphsReporter"
+	fi
+	if [ -h "showItalic.glyphsReporter" ] ; then
+		unlink "showItalic.glyphsReporter"
+	fi
+	if [ -h "ShowTopsAndBottoms.glyphsReporter" ] ; then
+	unlink "ShowTopsAndBottoms.glyphsReporter"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ ! -d "$Scripts" ] ; then
@@ -292,9 +310,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Uncover-xHeight/uncoverXHeight.glyphsReporter uncoverXHeight.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '================================'
 echo 'Done DeutschMark Uncover xHeight'
-echo '======================================'
+echo '================================'
 git clone https://github.com/DeutschMark/Show-Siblings.git DeutschMark_Show-Siblings
 cd DeutschMark_Show-Siblings
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -302,9 +320,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Siblings/ShowSiblings.glyphsReporter ShowSiblings.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '=============================='
 echo 'Done DeutschMark Show Siblings'
-echo '======================================'
+echo '=============================='
 git clone https://github.com/DeutschMark/Show-Distance-And-Angle-Of-Nodes.git DeutschMark_Show-Distance-And-Angle-Of-Nodes
 cd DeutschMark_Show-Distance-And-Angle-Of-Nodes
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -322,9 +340,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Next-Master/ShowNextMaster.glyphsReporter ShowNextMaster.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '================================='
 echo 'Done DeutschMark Show Next Master'
-echo '======================================'
+echo '================================='
 git clone https://github.com/DeutschMark/Show-Kerning-Group-Reference.git DeutschMark_Show-Kerning-Group-Reference
 cd DeutschMark_Show-Kerning-Group-Reference
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -342,9 +360,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Rotated/ShowRotated.glyphsReporter ShowRotated.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '============================='
 echo 'Done DeutschMark Show Rotated'
-echo '======================================'
+echo '============================='
 git clone https://github.com/DeutschMark/Show-Label-Color.git DeutschMark_Show-Label-Color
 cd DeutschMark_Show-Label-Color
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -352,9 +370,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Label-Color/LabelColor.glyphsReporter LabelColor.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '================================='
 echo 'Done DeutschMark Show Label Color'
-echo '======================================'
+echo '================================='
 git clone https://github.com/DeutschMark/Show-Node-Count.git DeutschMark_Show-Node-Count
 cd DeutschMark_Show-Node-Count
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -362,9 +380,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Show-Node-Count/ShowNodeCount.glyphsReporter ShowNodeCount.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '======================================'
+echo '================================'
 echo 'Done DeutschMark Show Node Count'
-echo '======================================'
+echo '================================'
 git clone https://github.com/DeutschMark/Glyphsapp-Scripts.git DeutschMark_Glyphsapp-Scripts
 cd DeutschMark_Glyphsapp-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -380,9 +398,9 @@ ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Scripts/Glyphs/ Glyphs
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Scripts/Metrics/ Metrics
 ln -s ~/Documents/GlyphsScripts/DeutschMark_Glyphsapp-Scripts/Sketching/ Sketching
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=================================='
 echo 'Done DeutschMark Glyphsapp Scripts'
-echo '==================================='
+echo '=================================='
 git clone https://github.com/jenskutilek/Curve-Equalizer.git jenskutilek_Curve-Equalizer
 cd jenskutilek_Curve-Equalizer
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -390,9 +408,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/jenskutilek_Curve-Equalizer/Glyphs/CurveEQ.glyphsFilter CurveEQ.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================================='
 echo 'Done jenskutilek Curve-Equalizer Plugin'
-echo '==================================='
+echo '======================================='
 git clone https://github.com/jenskutilek/RedArrow-Glyphs.git jenskutilek_RedArrow-Glyphs
 cd jenskutilek_RedArrow-Glyphs
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -400,9 +418,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/jenskutilek_RedArrow-Glyphs/RedArrow.glyphsReporter RedArrow.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================================='
 echo 'Done jenskutilek RedArrow-Glyphs Plugin' 
-echo '==================================='
+echo '======================================='
 git clone https://github.com/justanotherfoundry/glyphsapp-scripts.git justanotherfoundry_glyphsapp-scripts
 cd justanotherfoundry_glyphsapp-scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -410,9 +428,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/justanotherfoundry_glyphsapp-scripts/ justanotherfoundry
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '==============================='
 echo 'Done justanotherfoundry Scripts'
-echo '==================================='
+echo '==============================='
 git clone https://github.com/mekkablue/BroadNibber.git mekkablue_BroadNibber
 cd mekkablue_BroadNibber
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -420,9 +438,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_BroadNibber/BroadNibber.glyphsFilter BroadNibber.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=================================='
 echo 'Done mekkablue Broad Nibber Plugin'
-echo '==================================='
+echo '=================================='
 git clone https://github.com/mekkablue/CutAndShake.git mekkablue_CutAndShake
 cd mekkablue_CutAndShake
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -440,9 +458,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_FixZeroHandles/FixZeroHandles.glyphsFilter FixZeroHandles.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '===================================='
 echo 'Done mekkablue FixZeroHandles Plugin'
-echo '==================================='
+echo '===================================='
 git clone https://github.com/mekkablue/Glyphs-Scripts.git mekkablue_Glyphs-Scripts
 cd mekkablue_Glyphs-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -450,9 +468,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/mekkablue_Glyphs-Scripts/ mekkablue
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================'
 echo 'Done mekkablue Scripts'
-echo '==================================='
+echo '======================'
 git clone https://github.com/mekkablue/InsertInflections.git mekkablue_InsertInflections
 cd mekkablue_InsertInflections
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -460,9 +478,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_InsertInflections/InsertInflections.glyphsFilter InsertInflections.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================'
 echo 'Done mekkablue Insert Inflections Plugin'
-echo '==================================='
+echo '========================================'
 git clone https://github.com/mekkablue/Inverter.git mekkablue_Inverter
 cd mekkablue_Inverter
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -470,9 +488,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_Inverter/Inverter.glyphsFilter Inverter.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=============================='
 echo 'Done mekkablue Inverter Plugin'
-echo '==================================='
+echo '=============================='
 git clone https://github.com/mekkablue/LayerGeek.git mekkablue_LayerGeek
 cd mekkablue_LayerGeek
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -480,9 +498,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_LayerGeek/LayerGeek.glyphsFilter LayerGeek.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '==============================='
 echo 'Done mekkablue LayerGeek Plugin'
-echo '==================================='
+echo '==============================='
 git clone https://github.com/mekkablue/MakeCorner.git mekkablue_MakeCorner
 cd mekkablue_MakeCorner
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -490,9 +508,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_MakeCorner/MakeCorner.glyphsFilter MakeCorner.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '================================'
 echo 'Done mekkablue MakeCorner Plugin'
-echo '==================================='
+echo '================================'
 git clone https://github.com/mekkablue/NotePalettes.git mekkablue_NotePalettes
 cd mekkablue_NotePalettes
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -511,9 +529,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_Noodler/Noodler.glyphsFilter Noodler.glyphsFilter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '============================='
 echo 'Done mekkablue Noodler Plugin'
-echo '==================================='
+echo '============================='
 git clone https://github.com/mekkablue/ShowAngledHandles.git mekkablue_ShowAngledHandles
 cd mekkablue_ShowAngledHandles
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -521,9 +539,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowAngledHandles/ShowAngledHandles.glyphsReporter ShowAngledHandles.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================='
 echo 'Done mekkablue Show Angled Handles Plugin'
-echo '==================================='
+echo '========================================='
 git clone https://github.com/mekkablue/ShowComponentOrder.git mekkablue_ShowComponentOrder
 cd mekkablue_ShowComponentOrder
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -531,9 +549,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowComponentOrder/ShowComponentOrder.glyphsReporter ShowComponentOrder.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=========================================='
 echo 'Done mekkablue Show Component Order Plugin'
-echo '==================================='
+echo '=========================================='
 git clone https://github.com/mekkablue/ShowCoordinatesOfSelectedNodes.git mekkablue_ShowCoordinatesOfSelectedNodes
 cd mekkablue_ShowCoordinatesOfSelectedNodes
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -541,9 +559,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowCoordinatesOfSelectedNodes/ShowCoordinatesOfSelectedNodes.glyphsReporter ShowCoordinatesOfSelectedNodes.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================================'
 echo 'Done mekkablue Show Coordinates Of Selected Nodes Plugin'
-echo '==================================='
+echo '========================================================'
 git clone https://github.com/mekkablue/ShowCrosshair.git mekkablue_ShowCrosshair
 cd mekkablue_ShowCrosshair
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -551,9 +569,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowCrosshair/ShowCrosshair.glyphsReporter ShowCrosshair.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '====================================='
 echo 'Done mekkablue Show Cross hair Plugin'
-echo '==================================='
+echo '====================================='
 git clone https://github.com/mekkablue/ShowFilledPreview.git mekkablue_ShowFilledPreview
 cd mekkablue_ShowFilledPreview
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -561,9 +579,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowFilledPreview/ShowFilledPreview.glyphsReporter ShowFilledPreview.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================='
 echo 'Done mekkablue Show Filled Preview Plugin'
-echo '==================================='
+echo '========================================='
 git clone https://github.com/mekkablue/ShowGlyphsInLabelColor.git mekkablue_ShowGlyphsInLabelColor
 cd mekkablue_ShowGlyphsInLabelColor
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -571,9 +589,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowGlyphsInLabelColor/GlyphsInLabelColor.glyphsReporter GlyphsInLabelColor.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '================================================'
 echo 'Done mekkablue Show Glyphs In Label Color Plugin'
-echo '==================================='
+echo '================================================'
 git clone https://github.com/mekkablue/ShowHandlesEverywhere.git mekkablue_ShowHandlesEverywhere
 cd mekkablue_ShowHandlesEverywhere
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -581,9 +599,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowHandlesEverywhere/ShowHandlesEverywhere.glyphsReporter ShowHandlesEverywhere.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '============================================='
 echo 'Done mekkablue Show Handles Everywhere Plugin'
-echo '==================================='
+echo '============================================='
 git clone https://github.com/mekkablue/ShowInterpolations.git mekkablue_ShowInterpolations
 cd mekkablue_ShowInterpolations
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -591,9 +609,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowInterpolations/ShowInterpolation.glyphsReporter ShowInterpolation.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================='
 echo 'Done mekkablue Show Interpolations Plugin'
-echo '==================================='
+echo '========================================='
 git clone https://github.com/mekkablue/ShowMetricsKeys.git mekkablue_ShowMetricsKeys
 cd mekkablue_ShowMetricsKeys
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -601,9 +619,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowMetricsKeys/ShowMetricsKeys.glyphsReporter ShowMetricsKeys.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================================='
 echo 'Done mekkablue Show Metrics Keys Plugin'
-echo '==================================='
+echo '======================================='
 git clone https://github.com/mekkablue/ShowOffsetCurveParameterPreview.git mekkablue_ShowOffsetCurveParameterPreview
 cd mekkablue_ShowOffsetCurveParameterPreview
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -611,9 +629,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowOffsetCurveParameterPreview/OffsetPreview.glyphsReporter OffsetPreview.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================================='
 echo 'Done mekkablue Show Offset Curve Parameter Preview Plugin'
-echo '==================================='
+echo '========================================================='
 git clone https://github.com/mekkablue/Symmetry.git mekkablue_Symmetry
 cd mekkablue_Symmetry
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -621,9 +639,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_Symmetry/Symmetry.glyphsReporter Symmetry.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=============================='
 echo 'Done mekkablue Symmetry Plugin'
-echo '==================================='
+echo '=============================='
 git clone https://github.com/mekkablue/ShowExportStatus.git mekkablue_ShowExportStatus
 cd mekkablue_ShowExportStatus
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -631,9 +649,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/mekkablue_ShowExportStatus/ShowExportStatus.glyphsReporter ShowExportStatus.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================================'
 echo 'Done mekkablue ShowExportStatus Plugin'
-echo '==================================='
+echo '======================================'
 git clone https://github.com/schriftgestalt/Autopsy-Plugin.git schriftgestalt_Autopsy-Plugin
 cd schriftgestalt_Autopsy-Plugin
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -641,9 +659,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_Autopsy-Plugin/Autopsy.glyphsPlugin Autopsy.glyphsPlugin
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=================================='
 echo 'Done schriftgestalt Autopsy Plugin'
-echo '==================================='
+echo '=================================='
 git clone https://github.com/schriftgestalt/Glyphs-Plugins.git schriftgestalt_Glyphs-Plugins
 cd schriftgestalt_Glyphs-Plugins
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -651,9 +669,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_Glyphs-Plugins/GlyphsExpandPathsPreviewTool.glyphsReporter GlyphsExpandPathsPreviewTool.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '====================================================='
 echo 'Done schriftgestalt  Expand Paths Preview Tool Plugin'
-echo '==================================='
+echo '====================================================='
 git clone https://github.com/schriftgestalt/Glyphs-Scripts.git schriftgestalt_Glyphs-Scripts
 cd schriftgestalt_Glyphs-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -679,9 +697,9 @@ cd ~/Library/Application\ Support/FontLab/Studio\ 5/Macros/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_Glyphs-Scripts/Glyphs\ Export.py Glyphs\ Export.py 
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_Glyphs-Scripts/Glyphs\ Import.py Glyphs\ Import.py 
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '==========================='
 echo 'Done schriftgestalt Scripts'
-echo '==================================='
+echo '==========================='
 git clone https://github.com/schriftgestalt/word-o-mat.git schriftgestalt_word-o-mat
 cd schriftgestalt_word-o-mat
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -689,9 +707,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_word-o-mat/word-o-mat.glyphsPlugin word-o-mat.glyphsPlugin
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '====================================='
 echo 'Done schriftgestalt word-o-mat Plugin'
-echo '==================================='
+echo '====================================='
 git clone https://github.com/schriftgestalt/DrawBotGlyphsPlugin.git schriftgestalt_DrawBotGlyphsPlugin
 cd schriftgestalt_DrawBotGlyphsPlugin
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -699,9 +717,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/schriftgestalt_DrawBotGlyphsPlugin/DrawBot.glyphsPlugin DrawBot.glyphsPlugin
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================================'
 echo 'Done schriftgestalt DrawBotGlyphs Plugin'
-echo '==================================='
+echo '========================================'
 git clone https://github.com/Tosche/Glyphs-Scripts.git Tosche_Glyphs-Scripts
 cd Tosche_Glyphs-Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -709,9 +727,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/Tosche_Glyphs-Scripts/ Tosche
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '==================='
 echo 'Done Tosche Scripts'
-echo '==================================='
+echo '==================='
 git clone https://github.com/Tosche/ShowBlackFill.git Tosche_ShowBlackFill
 cd Tosche_ShowBlackFill
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -719,9 +737,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/Tosche_ShowBlackFill/ShowBlackFill.glyphsReporter ShowBlackFill.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=================================='
 echo 'Done Tosche Show Black Fill Plugin'
-echo '==================================='
+echo '=================================='
 git clone https://github.com/Tosche/BubbleKern.git Tosche_BubbleKern
 cd Tosche_BubbleKern
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -737,9 +755,9 @@ ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/BubbleKern.py BubbleKern.py
 ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/Delete\ Bubble\ Layers.py Delete\ Bubble\ Layers.py
 ln -s ~/Documents/GlyphsScripts/Tosche_BubbleKern/Make\ Bubble\ Layers.py Make\ Bubble\ Layers.py
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '======================'
 echo 'Done Tosche BubbleKern'
-echo '==================================='
+echo '======================'
 git clone https://github.com/simoncozens/GlyphsGit.git SimonCozens_GlyphsGit
 cd SimonCozens_GlyphsGit
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -747,9 +765,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/SimonCozens_GlyphsGit/GlyphsGit.glyphsPlugin GlyphsGit.glyphsPlugin
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '================================='
 echo 'Done SimonCozens GlyphsGit Plugin'
-echo '==================================='
+echo '================================='
 git clone https://github.com/simoncozens/GlyphsPlugins.git SimonCozens_ShowPathArea
 cd SimonCozens_ShowPathArea
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -757,9 +775,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Plugins/
 ln -s ~/Documents/GlyphsScripts/SimonCozens_ShowPathArea/ShowPathArea.glyphsReporter ShowPathArea.glyphsReporter
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '===================================='
 echo 'Done SimonCozens ShowPathArea Plugin'
-echo '==================================='
+echo '===================================='
 git clone https://github.com/simoncozens/GlyphsScripts.git SimonCozens_Scripts
 cd SimonCozens_Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
@@ -767,9 +785,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/SimonCozens_Scripts/ SimonCozens
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '=========================='
 echo "Done SimonCozens's Scripts"
-echo '==================================='
+echo '=========================='
 git clone https://github.com/huertatipografica/huertatipografica-scripts.git HuertaTipografica_Scripts
 cd HuertaTipografica_Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
@@ -777,9 +795,9 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/HuertaTipografica_Scripts/ HuertaTipografica
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '================================='
 echo "Done Huerta Tipografica's Scripts"
-echo '==================================='
+echo '================================='
 git clone https://github.com/weiweihuanghuang/wei-glyphs-scripts.git wei_scripts
 cd wei_scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
@@ -787,18 +805,126 @@ printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsSc
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/wei_scripts/ Wei
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '========================'
 echo "Done Wei Huang's Scripts"
-echo '==================================='
-git clone https://github.com/Nevu/IconFont.git Nevu_Scripts
+echo '========================'
+git clone https://github.com/Nevu/Nevu_ScriptsForGlyphs.git Nevu_Scripts
 cd Nevu_Scripts
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
 cd ~/Library/Application\ Support/Glyphs/Scripts/
 ln -s ~/Documents/GlyphsScripts/Nevu_Scripts/ Nevu
 cd ~/Documents/GlyphsScripts/
-echo '==================================='
+echo '==================='
 echo "Done Nevu's Scripts"
-echo '==================================='
+echo '==================='
+
+############################################
+##### Start of New Scripts and Filters #####
+############################################
+
+git clone https://github.com/guidoferreyra/Glyphs-Scripts.git GuidoFerreyra_Scripts
+cd GuidoFerreyra_Scripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/GuidoFerreyra_Scripts/ GuidoFerreyra
+cd ~/Documents/GlyphsScripts/
+echo '============================='
+echo "Done Guido Ferreyra's Scripts"
+echo '============================='
+
+git clone https://github.com/guidoferreyra/ShowNextFont.git GuidoFerreyra_ShowNextFont
+cd GuidoFerreyra_ShowNextFont
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/GuidoFerreyra_ShowNextFont/showNextFont.glyphsReporter showNextFont.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '======================================'
+echo 'Done GuidoFerreyra_ShowNextFont Plugin'
+echo '======================================'
+
+git clone https://github.com/guidoferreyra/ShowNextFontAnchors.git GuidoFerreyra_ShowNextFontAnchors
+cd GuidoFerreyra_ShowNextFontAnchors
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/GuidoFerreyra_ShowNextFontAnchors/showNextFontAnchors.glyphsReporter showNextFontAnchors.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '============================================='
+echo 'Done GuidoFerreyra_ShowNextFontAnchors Plugin'
+echo '============================================='
+
+git clone https://github.com/guidoferreyra/showAnchorCoordinates.git GuidoFerreyra_showAnchorCoordinates
+cd GuidoFerreyra_showAnchorCoordinates
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/GuidoFerreyra_showAnchorCoordinates/showAnchorCoordinates.glyphsReporter showAnchorCoordinates.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '==============================================='
+echo 'Done GuidoFerreyra_showAnchorCoordinates Plugin'
+echo '==============================================='
+
+git clone https://github.com/guidoferreyra/showCoordinates.git GuidoFerreyra_showCoordinates
+cd GuidoFerreyra_showCoordinates
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/GuidoFerreyra_showCoordinates/showCoordinates.glyphsReporter showCoordinates.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '========================================='
+echo 'Done GuidoFerreyra_showCoordinates Plugin'
+echo '========================================='
+
+git clone https://github.com/mekkablue/ShowItalic.git mekkablue_ShowItalic
+cd mekkablue_ShowItalic
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_ShowItalic/ShowItalic.glyphsReporter ShowItalic.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '================================'
+echo 'Done mekkablue ShowItalic Plugin'
+echo '================================'
+
+git clone https://github.com/mekkablue/ShowTopsAndBottoms.git mekkablue_ShowTopsAndBottoms
+cd mekkablue_ShowTopsAndBottoms
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_ShowTopsAndBottoms/ShowTopsAndBottoms.glyphsReporter ShowTopsAndBottoms.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '========================================'
+echo 'Done mekkablue ShowTopsAndBottoms Plugin'
+echo '========================================'
+
+##############################
+###    Testing releases    ###
+
+# git clone https://github.com/simoncozens/Callipers.git SimonCozens_Callipers
+# latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+# cd SimonCozens_Callipers
+# curl https://github.com/simoncozens/Callipers/releases/download/$latestTag/Callipers-$latestTag.zip
+# unzip Callipers-$latestTag.zip ./
+# printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+# printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+# cd ~/Library/Application\ Support/Glyphs/Plugins/
+# ln -s ~/Documents/GlyphsScripts/SimonCozens_Callipers/Callipers.glyphsTool Callipers.glyphsTool
+# cd ~/Documents/GlyphsScripts/
+# echo '=================================='
+# echo 'Done Simon Cozens Callipers Plugin'
+# echo '=================================='
+
+###    Testing releases    ###
+##############################
+
+############################################
+###### End of New Scripts and Filters ######
+############################################
+
 sudo ditto /tmp/GlyphsScriptsConfi/sync_git_repos /private/etc/cron.d/sync_git_repos
 echo Finished Glyphs Scripts setup
+
+
