@@ -261,7 +261,10 @@ if [ -d "Plugins" ] ; then
 		unlink "showItalic.glyphsReporter"
 	fi
 	if [ -h "ShowTopsAndBottoms.glyphsReporter" ] ; then
-	unlink "ShowTopsAndBottoms.glyphsReporter"
+		unlink "ShowTopsAndBottoms.glyphsReporter"
+	fi
+	if [ -h "GlobalGlyph.glyphsReporter" ] ; then
+		unlink "GlobalGlyph.glyphsReporter"
 	fi
 fi
 echo "Uninstallation complete"
