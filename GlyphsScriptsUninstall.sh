@@ -266,5 +266,8 @@ if [ -d "Plugins" ] ; then
 	if [ -h "GlobalGlyph.glyphsReporter" ] ; then
 		unlink "GlobalGlyph.glyphsReporter"
 	fi
+	if [ -h "ShowDistanceBetweenTwoPoints.glyphsReporter" ] ; then
+		unlink "ShowDistanceBetweenTwoPoints.glyphsReporter"
+	fi
 fi
 echo "Uninstallation complete"
