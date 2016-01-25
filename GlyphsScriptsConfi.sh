@@ -272,6 +272,9 @@ if [ -d "Plugins" ] ; then
 	if [ -h "GlobalGlyph.glyphsReporter" ] ; then
 		unlink "GlobalGlyph.glyphsReporter"
 	fi
+	if [ -h "ShowDistanceBetweenTwoPoints.glyphsReporter" ] ; then
+		unlink "ShowDistanceBetweenTwoPoints.glyphsReporter"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ ! -d "$Scripts" ] ; then
@@ -655,6 +658,16 @@ cd ~/Documents/GlyphsScripts/
 echo '======================================'
 echo 'Done mekkablue ShowExportStatus Plugin'
 echo '======================================'
+git clone https://github.com/mekkablue/ShowDistanceBetweenTwoPoints.git mekkablue_ShowDistanceBetweenTwoPoints
+cd mekkablue_ShowDistanceBetweenTwoPoints
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/mekkablue_ShowDistanceBetweenTwoPoints/ShowDistanceBetweenTwoPoints.glyphsReporter ShowDistanceBetweenTwoPoints.glyphsReporter
+cd ~/Documents/GlyphsScripts/
+echo '=================================================='
+echo 'Done mekkablue ShowDistanceBetweenTwoPoints Plugin'
+echo '=================================================='
 git clone https://github.com/schriftgestalt/Autopsy-Plugin.git schriftgestalt_Autopsy-Plugin
 cd schriftgestalt_Autopsy-Plugin
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
@@ -940,5 +953,3 @@ echo '================================'
 
 sudo ditto /tmp/GlyphsScriptsConfi/sync_git_repos /private/etc/cron.d/sync_git_repos
 echo Finished Glyphs Scripts setup
-
-
