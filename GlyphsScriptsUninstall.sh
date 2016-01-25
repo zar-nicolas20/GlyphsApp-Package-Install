@@ -34,23 +34,23 @@ if [ -d "Scripts" ] ; then
 	if [ -d "BubbleKern" ] ; then
 		rm -r "BubbleKern"
 	fi
-	if [ -h "Deutshcmark/Accents" ] ; then
-		unlink "Deutshcmark/Accents"
+	if [ -h "Deutschmark/Accents" ] ; then
+		unlink "Deutschmark/Accents"
 	fi
-	if [ -h "Deutshcmark/Font" ] ; then
-		unlink "Deutshcmark/Font"
+	if [ -h "Deutschmark/Font" ] ; then
+		unlink "Deutschmark/Font"
 	fi
-	if [ -h "Deutshcmark/Glyphs" ] ; then
-		unlink "Deutshcmark/Glyphs"
+	if [ -h "Deutschmark/Glyphs" ] ; then
+		unlink "Deutschmark/Glyphs"
 	fi
-	if [ -h "Deutshcmark/Metrics" ] ; then
-		unlink "Deutshcmark/Metrics"
+	if [ -h "Deutschmark/Metrics" ] ; then
+		unlink "Deutschmark/Metrics"
 	fi
-	if [ -h "Deutshcmark/Sketching" ] ; then
-		unlink "Deutshcmark/Sketching"
+	if [ -h "Deutschmark/Sketching" ] ; then
+		unlink "Deutschmark/Sketching"
 	fi
-	if [ -d "Deutshcmark" ] ; then
-		rm -r "Deutshcmark"
+	if [ -d "Deutschmark" ] ; then
+		rm -r "Deutschmark"
 	fi
 	if [ -h "GSPen.py" ] ; then
 		unlink "GSPen.py"
