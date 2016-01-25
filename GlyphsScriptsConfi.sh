@@ -903,12 +903,12 @@ echo '========================================'
 echo 'Done mekkablue ShowTopsAndBottoms Plugin'
 echo '========================================'
 
-git clone https://github.com/Nevu/PluginsForGlyphs_Nevu.git Nevu_Plugins
-cd Nevu_Plugins/Show-Global-Glyph
+git clone https://github.com/Nevu/Show-Global-Glyph.git nevu_ShowGlobalGlyphs
+cd nevu_ShowGlobalGlyphs
 printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
 printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
 cd ~/Library/Application\ Support/Glyphs/Plugins/
-ln -s ~/Documents/GlyphsScripts/Nevu_Plugins/Show-Global-Glyph/GlobalGlyph.glyphsReporter GlobalGlyph.glyphsReporter
+ln -s ~/Documents/GlyphsScripts/nevu_ShowGlobalGlyphs/GlobalGlyph.glyphsReporter GlobalGlyph.glyphsReporter
 cd ~/Documents/GlyphsScripts/
 echo '================================'
 echo 'Done Nevu ShowGlobalGlyph Plugin'
