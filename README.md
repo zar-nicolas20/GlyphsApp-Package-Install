@@ -80,6 +80,7 @@ You only need to run `GlyphsScriptsUninstall.sh`, put your user password to dele
   * [mekkablue Show Italic Plugin](https://github.com/mekkablue/ShowItalic)
   * [mekkablue Show Tops And Bottoms Plugin](https://github.com/mekkablue/ShowTopsAndBottoms)
   * [mekkablue Show Coordinates Of Selected Nodes Plugin](https://github.com/mekkablue/ShowCoordinatesOfSelectedNodes)
+  * [mekkablue Show Distance Between Two Points](https://github.com/mekkablue/ShowDistanceBetweenTwoPoints)
   * [mekkablue Show Cross hair Plugin](https://github.com/mekkablue/ShowCrosshair)
   * [mekkablue Show Filled Preview Plugin](https://github.com/mekkablue/ShowFilledPreview)
   * [mekkablue Show Glyphs In Label Color Plugin](https://github.com/mekkablue/ShowGlyphsInLabelColor)
