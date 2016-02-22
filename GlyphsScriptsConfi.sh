@@ -127,6 +127,9 @@ if [ -d "Scripts" ] ; then
 	if [ -h "GuidoFerreyra" ] ; then
 		unlink "GuidoFerreyra"
 	fi
+	if [ -h "ohBendy" ] ; then
+		unlink "ohBendy"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ -d "Plugins" ] ; then
@@ -274,6 +277,12 @@ if [ -d "Plugins" ] ; then
 	fi
 	if [ -h "ShowDistanceBetweenTwoPoints.glyphsReporter" ] ; then
 		unlink "ShowDistanceBetweenTwoPoints.glyphsReporter"
+	fi
+	if [ -h "ShowFlippedComponents.glyphsReporter" ] ; then
+		unlink "ShowFlippedComponents.glyphsReporter"
+	fi
+	if [ -h "ShowMasterName&Glyph.glyphsReporter" ] ; then
+		unlink "ShowMasterName&Glyph.glyphsReporter"
 	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
@@ -926,6 +935,29 @@ cd ~/Documents/GlyphsScripts/
 echo '================================'
 echo 'Done Nevu ShowGlobalGlyph Plugin'
 echo '================================'
+
+git clone https://github.com/ohbendy/Python-scripts-for-Glyphs.git ohbendy_PluginsAndScripts
+cd ohbendy_PluginsAndScripts
+printf '*.vfbak\n*.pyc\n.DS_Store\nREADME.*\nLICENSE.*\n.gitignore\n*.vdiff\nLICENSE\n*png\n' > .gitignore
+printf '*/5 * * * * app cd '$(pwd)' && git fetch -q --all -p\n' >> /tmp/GlyphsScriptsConfi/sync_git_repos
+# First the Plugins
+cd ~/Library/Application\ Support/Glyphs/Plugins/
+ln -s ~/Documents/GlyphsScripts/ohbendy_PluginsAndScripts/ShowFlippedComponents.glyphsReporter ShowFlippedComponents.glyphsReporter
+echo '============================================='
+echo "Done ohbendy's Show Flipped Components Plugin"
+echo '============================================='
+ln -s ~/Documents/GlyphsScripts/ohbendy_PluginsAndScripts/ShowMasterName\&Glyph.glyphsReporter ShowMasterName\&Glyph.glyphsReporter
+echo '=============================================='
+echo "Done ohbendy's Show Master Name & Glyph Plugin"
+echo '=============================================='
+cd ~/Documents/GlyphsScripts/
+# Then the scripts
+cd ~/Library/Application\ Support/Glyphs/Scripts/
+ln -s ~/Documents/GlyphsScripts/ohbendy_PluginsAndScripts/ ohBendy
+cd ~/Documents/GlyphsScripts/
+echo '======================'
+echo "Done ohbendy's Scripts"
+echo '======================'
 
 ##############################
 ###    Testing releases    ###

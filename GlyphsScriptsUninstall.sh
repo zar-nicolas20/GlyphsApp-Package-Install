@@ -121,6 +121,9 @@ if [ -d "Scripts" ] ; then
 	if [ -h "GuidoFerreyra" ] ; then
 		unlink "GuidoFerreyra"
 	fi
+	if [ -h "ohBendy" ] ; then
+		unlink "ohBendy"
+	fi
 fi
 cd ~/Library/Application\ Support/Glyphs/
 if [ -d "Plugins" ] ; then
@@ -268,6 +271,12 @@ if [ -d "Plugins" ] ; then
 	fi
 	if [ -h "ShowDistanceBetweenTwoPoints.glyphsReporter" ] ; then
 		unlink "ShowDistanceBetweenTwoPoints.glyphsReporter"
+	fi
+	if [ -h "ShowFlippedComponents.glyphsReporter" ] ; then
+		unlink "ShowFlippedComponents.glyphsReporter"
+	fi
+	if [ -h "ShowMasterName&Glyph.glyphsReporter" ] ; then
+		unlink "ShowMasterName&Glyph.glyphsReporter"
 	fi
 fi
 echo "Uninstallation complete"
